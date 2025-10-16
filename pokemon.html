@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KURYENTerest ⚡</title>
+  <style>
+    body {
+      background-image: url("woah.jpeg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+    .header {
+      background-color: rgba(10, 10, 10, 0.85);
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 0 20px #ff7518;
+      border-bottom: 2px solid #ff7518;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header h1 {
+      color: #ffae42;
+      font-size: 48px;
+      margin: 0 auto;
+      text-shadow: 0 0 20px #ffae42, 0 0 40px #ffae42;
+      letter-spacing: 2px;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: rgba(30, 30, 30, 0.8);
+      overflow: hidden;
+      border-bottom: 1px solid #ffae42;
+      text-align: center;
+      display: flex;
+      Justify-content: center;
+    }
+
+    .navbar a {
+      color: #ffffff;
+      font-family: 'Orbitron', sans-serif;
+      padding: 16px 20px;
+      display: inline-block;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ffae42;
+      text-shadow: 0 0 10px #ffae42;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 60px auto;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid #ffae42;
+      box-shadow: 0 0 30px rgba(255, 174, 66, 0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      color: #ffae42;
+      text-shadow: 0 0 15px #ffae42;
+    }
+
+    p {
+      text-align: center;
+      font-style: italic;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 6px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffae42;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 14px;
+      box-shadow: inset 0 0 8px rgba(255, 174, 66, 0.6);
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      box-shadow: 0 0 15px #ffae42;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: transparent;
+      color: #ffae42;
+      border: 2px solid #ffae42;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      transition: 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    button:hover {
+      background-color: #ffae42;
+      color: #000;
+      box-shadow: 0 0 20px #ffae42;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      margin-top: 25px;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      border: 1px solid rgba(255, 174, 66, 0.6);
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: rgba(255, 174, 66, 0.2);
+      text-shadow: 0 0 8px #ffae42;
+    }
+
+    tr:hover {
+      background-color: rgba(255, 174, 66, 0.15);
+    }
+
+    .tip {
+      border: 1px dashed #ffae42;
+      padding: 15px;
+      margin-top: 25px;
+      font-style: italic;
+      text-align: center;
+      color: #ffae42;
+      text-shadow: 0 0 10px #ffae42;
+      background-color: rgba(255, 174, 66, 0.05);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>⚡ KURYENTerest ⚡</h1>
+  </div>
+
+  <div class="navbar">
+    <a href="jana.html">ABOUT</a>
+    <a href="pokemon.html">TRACKER</a>
+    <a href="woah.html">CONTACTS</a>
+  </div>
+
+  <div class="container">
+    <p> 🌞 Your Personal Tracker for Energy Use!!! 🌞</p>
+
+    <h2>Energy Tracker</h2>
+    <form id="energyForm">
+      <label for="appliance">Appliance Name:</label>
+      <input type="text" id="appliance" required>
+
+      <label for="wattage">Wattage (W):</label>
+      <input type="number" id="wattage" step="1" min="1" required>
+
+      <label for="hours">Hours Used Per Day:</label>
+      <input type="number" id="hours" step="0.1" min="0" required>
+
+      <label for="date">Date of Usage:</label>
+      <input type="date" id="date" required>
+
+      <button type="button" onclick="addData()">Add Usage ⚡</button>
+    </form>
+
+    <h2>Usage Summary</h2>
+    <table id="usageTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Appliance</th>
+          <th>Wattage (W)</th>
+          <th>Hours/Day</th>
+          <th>Est. kWh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data rows appear here -->
+      </tbody>
+    </table>
+
+    <div class="tip">
+      💡 Tip of the Day: Save energy — unplug devices when not in use!
+    </div>
+  </div>
+
+  <script>
+    function addData() {
+      const appliance = document.getElementById("appliance").value;
+      const wattage = parseFloat(document.getElementById("wattage").value);
+      const hours = parseFloat(document.getElementById("hours").value);
+      const date = document.getElementById("date").value;
+
+      if (!appliance || isNaN(wattage) || isNaN(hours) || !date) return;
+
+      const kWh = ((wattage * hours) / 1000).toFixed(2);
+
+      const table = document.getElementById("usageTable").getElementsByTagName('tbody')[0];
+      const row = table.insertRow();
+
+      row.innerHTML = `
+        <td>${date}</td>
+        <td>${appliance}</td>
+        <td>${wattage}</td>
+        <td>${hours}</td>
+        <td>${kWh}</td>
+      `;
+
+      document.getElementById("energyForm").reset();
+    }
+  </script>
+
+</body>
+</html>
